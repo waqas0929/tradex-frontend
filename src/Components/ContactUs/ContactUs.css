@@ -1,0 +1,78 @@
+/* src/Components/ContactUs/ContactUs.css */
+.contact-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Reduced padding */
+    background-color: #f9f9f9;
+    margin-top: 5%;
+  }
+  
+  .contact-us-image {
+    margin-right: 50px; /* Reduced margin */
+  }
+  
+  .contact-us-image img {
+    width: 350px; /* Adjust size as needed */
+    border-radius: 12px;
+  }
+  
+  .contact-us-form-container {
+    background-color: #fff;
+    padding: 20px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjusted width */
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .contact-us-form-container h1 {
+    font-size: 1.5rem; /* Reduced font size */
+    margin-bottom: 15px; /* Reduced margin */
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Reduced margin */
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Reduced font size */
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    height: 80px; /* Reduced height */
+  }
+  
+  .contact-us-button {
+    display: block;
+    width: 100%;
+    padding: 10px; /* Reduced padding */
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .contact-us-button:hover {
+    background: linear-gradient(to right, #182848, #4b6cb7); /* Adjusted for hover state */
+  }
+  

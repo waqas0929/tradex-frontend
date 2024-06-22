@@ -1,0 +1,28 @@
+/* BuyNow.css */
+
+.buy-now-container {
+  padding: 20px;
+}
+
+.order-details {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.order-details h2 {
+  margin: 10px 0;
+}
+
+.order-details p {
+  margin: 5px 0;
+}

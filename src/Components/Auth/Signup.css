@@ -1,0 +1,89 @@
+.signup-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(254, 253, 253);
+  border: 1px solid #ddd; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-family: 'Arial', sans-serif; /* Consistent font for the form */
+ 
+}
+
+.signup-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px; /* Adds space between title and form elements */
+}
+
+.signup-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #666;
+  font-weight: bold; /* Makes label text bold */
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50; /* Primary button color */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.signup-button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+.error {
+  color: #d9534f; /* Error message color */
+  background-color: #f2dede;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px; /* Space above error message */
+}
+
+.success-message {
+  text-align: center;
+  font-family: 'Arial', sans-serif;  
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50; /* Primary button color */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box;  
+}
+.login-button:hover{
+  background-color: #45a049;
+}

@@ -1,0 +1,133 @@
+.add-product-form{
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-family: 'Arial', sans-serif;
+  margin-top: 5%;
+}
+
+.add-product-form:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.add-product-form h1{
+  text-align: center;
+  color: #333;
+  margin: 0;
+
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="%23666" stroke-width=".5" d="M2 0L0 2h4z"/></svg>') no-repeat right 10px center;
+  background-color: #fff;
+  background-size: 8px 10px;
+  padding-right: 30px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.add-product-button
+{
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-sizing: border-box;
+}
+.add-category-button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-sizing: border-box;
+}
+
+.add-product-button:hover,
+.add-category-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.add-product-button:active,
+.add-category-button:active {
+  background-color: #388e3c;
+  transform: translateY(0);
+}
+
+.add-category-button.small {
+  width: auto;
+  padding: 10px 20px;
+}
+
+.inline-group {
+  display: flex;
+  align-items: center;
+}
+
+.inline-group input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.error {
+  color: #d9534f;
+  background-color: #f2dede;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
+}

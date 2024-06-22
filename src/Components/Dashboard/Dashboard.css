@@ -1,0 +1,82 @@
+/* Dashboard Container Styles */
+.dashboard-container {
+  padding: 40px;
+  background-color: #f7f7f7; /* Light background to make content stand out */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid #ddd;
+  margin: 7% auto 20px; /* Centering the dashboard and adding margin */
+  max-width: 960px; /* Maximum width for better reading experience */
+  color: #333; /* Darker text for better readability */
+  padding-bottom: 130px; 
+}
+
+.dashboard-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.dashboard-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #2c3e50;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.chart-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.chart-container:hover {
+  background-color: #f1f1f1;
+  border-color: #d1d1d1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+    margin: 60px auto 10px; /* Adjusted margin for smaller screens */
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .chart-container {
+    padding: 15px;
+  }
+}
+
+/* Animation for Chart Loading */
+.chart-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

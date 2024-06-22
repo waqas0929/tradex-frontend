@@ -1,0 +1,92 @@
+/* Base styles for the footer */
+body{
+    margin: 0;
+}
+.footer {
+    background: linear-gradient(to right, #4b6cb7, #182848); /* Gradient background */
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    /* border-radius: 10px 10px 0 0; Rounded corners */
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    z-index: 1000; /* Ensure footer is above other content */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Footer content layout */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center align content horizontally */
+}
+
+/* Footer left section */
+.footer-left {
+    flex: 1; /* Take up remaining space */
+    text-align: left; /* Align content to the left */
+}
+
+/* Footer center section */
+.footer-center {
+    flex: 1; /* Take up remaining space */
+}
+
+/* Footer right section */
+.footer-right {
+    flex: 1; /* Take up remaining space */
+    text-align: right; /* Align content to the right */
+}
+
+/* Navigation links */
+.footer-nav {
+    display: flex;
+    justify-content: flex-start; /* Align links to the left */
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px; /* Adjust spacing between links */
+    font-size: 16px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Social media icons */
+.social-media {
+    display: flex;
+    justify-content: center; /* Center align icons */
+    margin-left: 5%;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px; /* Adjust spacing between icons */
+    font-size: 1.5rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-nav {
+        justify-content: center;
+    }
+}

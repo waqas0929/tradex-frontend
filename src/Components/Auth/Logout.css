@@ -1,0 +1,79 @@
+.logout-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+.logout-popup-content {
+  background-color: #fff;
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 10px; /* Slightly larger border radius */
+  text-align: center;
+  max-width: 400px; /* Set max-width for better responsiveness */
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  animation: fadeIn 0.3s ease; /* Smooth fade-in effect */
+  color: #333; /* Ensure font color is dark enough */
+  font-family: Arial, sans-serif; /* Set a clear font-family */
+}
+
+.logout-popup-content h1 {
+  font-size: 24px; /* Larger font size for the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.logout-popup-content p {
+  font-size: 16px; /* Clear font size for the paragraph */
+  margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 30px; /* Wider buttons */
+  border: none;
+  border-radius: 5px; /* Slightly larger border radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  font-size: 16px; /* Clear font size for buttons */
+}
+
+.logout-button {
+  background-color: #1f33a7; /* Bootstrap-like red */
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #1f33a7; /* Darker red on hover */
+}
+
+.cancel-button {
+  background-color: #6c757d; /* Bootstrap-like gray */
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

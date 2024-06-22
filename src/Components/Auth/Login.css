@@ -1,0 +1,80 @@
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(254, 253, 253);
+  border: 1px solid #ddd; /* Light border for subtle depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-top: 8%;
+}
+
+.login-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #333; /* Dark grey color for better readability */
+  margin-bottom: 5px; /* Space between label and input field */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ccc; /* Slightly thicker border with a soft color */
+  border-radius: 4px; /* Rounded borders for the input fields */
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #0056b3; /* Highlight color when input is focused */
+  outline: none; /* Remove default focus outline */
+}
+
+.signin-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50; /* Primary button color */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.signin-button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+.error {
+  color: #d8000c; /* A more vibrant red for errors */
+  background-color: #ffbaba; /* Light red background for error messages */
+  border: 1px solid #d8000c;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 10px; /* More space above the error message */
+}
+
+.success {
+  color: #4F8A10; /* Green color for success messages */
+  background-color: #DFF2BF; /* Soft green background */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #4F8A10;
+}
