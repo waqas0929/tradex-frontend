@@ -26,10 +26,8 @@ const Navigation = ({ setSearchQuery }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLogout = () => {
-    logout(() => {
-      navigate("/Home");
-    });
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
 
   if (loading) {
@@ -63,41 +61,36 @@ const Navigation = ({ setSearchQuery }) => {
           Search
         </button>
       </form>
-      <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+      <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
         <li>
-          <Link to="/Home">Home</Link>
+          <Link to="/Home" onClick={handleLinkClick}>Home</Link>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <Link to="/products" onClick={handleLinkClick}>Products</Link>
         </li>
         {isAuthenticated && user.role === "admin" && (
           <>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard" onClick={handleLinkClick}>Dashboard</Link>
             </li>
             <li>
-              <Link to="/add-product">Add Product</Link>
+              <Link to="/add-product" onClick={handleLinkClick}>Add Product</Link>
             </li>
           </>
         )}
         {isAuthenticated ? (
-          <>
-            <li>
-              <Link to="/orders">My Orders</Link>
-            </li>
-            <li>
-              <button onClick={handleLogout} className="nav-button">
-                Logout
-              </button>
-            </li>
-          </>
+          <li>
+            <button onClick={() => { logout(); handleLinkClick(); }} className="nav-button">
+              Logout
+            </button>
+          </li>
         ) : (
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/login" onClick={handleLinkClick}>Login</Link>
             </li>
             <li>
-              <Link to="/signup">Signup</Link>
+              <Link to="/signup" onClick={handleLinkClick}>Signup</Link>
             </li>
           </>
         )}

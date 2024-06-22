@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import { setUser, clearUser } from "../Store/UserSlice";
+import { setUser, clearUser } from "../Store/userSlice";
 
 export const useAuth = () => {
   const dispatch = useDispatch();

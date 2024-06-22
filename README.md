@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+# B2B Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+B2B Portal is a web application designed to facilitate business-to-business transactions. It includes features for user authentication, product management, order processing, and a user-friendly shopping cart system.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- User Authentication (Sign Up, Sign In, Logout)
+- User Profile Management
+- Product Management (Add, Update, Delete Products)
+- Shopping Cart
+- Order Management
+- Search Functionality
+- Responsive Design
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
 
-### `npm run build`
+- React
+- Redux (For state management)
+- React Router (For navigation)
+- Axios (For API requests)
+- Formik (For form handling)
+- CSS (For styling)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- Express.js
+- PostgreSQL (Database)
+- Sequelize (ORM for PostgreSQL)
+- JWT (For authentication)
+- Redis (For caching)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js
+- PostgreSQL
+- Redis
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-username/b2b-portal.git
+    cd b2b-portal
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Backend Setup:**
+    - Navigate to the backend directory:
+        ```sh
+        cd b2b-be
+        ```
+    - Install dependencies:
+        ```sh
+        npm install
+        ```
+    - Create a `.env` file and configure your environment variables:
+        ```plaintext
+        DB_NAME=your_db_name
+        DB_USERNAME=your_db_username
+        DB_PASSWORD=your_db_password
+        DB_HOST=your_db_host
+        JWT_SECRET_KEY=your_jwt_secret
+        REDIS_URL=your_redis_url
+        PORT=3000
+        ```
+    - Run migrations and seed the database:
+        ```sh
+        npx sequelize-cli db:migrate
+        npx sequelize-cli db:seed:all
+        ```
+    - Start the backend server:
+        ```sh
+        npm start
+        ```
 
-## Learn More
+3. **Frontend Setup:**
+    - Navigate to the frontend directory:
+        ```sh
+        cd ../b2b-fe/b2b-portal
+        ```
+    - Install dependencies:
+        ```sh
+        npm install
+        ```
+    - Start the frontend development server:
+        ```sh
+        npm start
+        ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Access the frontend application at `http://localhost:3001`
+- The backend API is available at `http://localhost:3000/api`
 
-### Code Splitting
+### User Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Sign Up: `/signup`
+- Sign In: `/login`
 
-### Analyzing the Bundle Size
+### Product Management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Add Product: `/add-product`
+- View Products: `/products`
+- Update Product: `/products/:productId/edit`
+- Delete Product: `/products/:productId/delete`
 
-### Making a Progressive Web App
+### Shopping Cart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- View Cart: `/cart`
+- Add to Cart: `/products/:productId/add-to-cart`
+- Remove from Cart: `/cart/:productId/remove`
+- Checkout: `/checkout`
 
-### Advanced Configuration
+### Orders
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- View Orders: `/orders`
+- Place Order: `/place-order`
 
-### Deployment
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Auth
 
-### `npm run build` fails to minify
+- `POST /api/signup` - User registration
+- `POST /api/login` - User login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Products
+
+- `GET /api/products` - Get all products
+- `POST /api/products` - Add new product
+- `PUT /api/products/:productId` - Update product
+- `DELETE /api/products/:productId` - Delete product
+
+### Cart
+
+- `GET /api/cart/:userId` - Get user cart
+- `POST /api/cart` - Add to cart
+- `DELETE /api/cart/:userId/:productId` - Remove from cart
+
+### Orders
+
+- `GET /api/orders/:userId` - Get user orders
+- `POST /api/orders` - Place an order
+
+## Project Structure
+
+ **Clone the repository:**
+  
+    git clone https://github.com/waqas0929/tradex-frontend.git
+    ```
