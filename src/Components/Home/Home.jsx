@@ -1,4 +1,3 @@
-// src/Components/Home/Home.jsx
 import React, { useEffect, useState } from 'react';
 import { getProducts } from '../../Services/ProductServices';
 import './Home.css';
@@ -26,7 +25,7 @@ const Home = () => {
         {products.length > 0 ? (
           products.map(product => (
             <div key={product.id} className="product-card">
-              <img src={product.imageUrl || 'https://via.placeholder.com/300'} alt={product.productName} />
+              <img src={product.imagePath || '/default-image-path.jpg'} alt={product.productName} />
               <h2>{product.productName}</h2>
               <p>{product.description}</p>
               <p>Price: ${product.price}</p>
@@ -42,4 +41,3 @@ const Home = () => {
 };
 
 export default Home;
-  

@@ -65,7 +65,7 @@ const Profile = () => {
       <h1 className="profile-title">User Profile</h1>
       <div className="profile-card">
         <div className="profile-avatar">
-          <img src="https://via.placeholder.com/150" alt="User Avatar" />
+          <img src='/default-profile-image-path.jpg' alt='User Avatar' />
         </div>
         <div className="profile-details">
           {isEditing ? (

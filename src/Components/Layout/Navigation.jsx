@@ -68,6 +68,9 @@ const Navigation = ({ setSearchQuery }) => {
         <li>
           <Link to="/products" onClick={handleLinkClick}>Products</Link>
         </li>
+        <li>
+              <Link to="/orders" onClick={handleLinkClick}>My Orders</Link>
+            </li>
         {isAuthenticated && user.role === "admin" && (
           <>
             <li>
@@ -76,6 +79,7 @@ const Navigation = ({ setSearchQuery }) => {
             <li>
               <Link to="/add-product" onClick={handleLinkClick}>Add Product</Link>
             </li>
+            
           </>
         )}
         {isAuthenticated ? (

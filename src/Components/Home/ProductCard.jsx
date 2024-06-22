@@ -1,4 +1,3 @@
-// src/Components/ProductCard/ProductCard.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -47,7 +46,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <div className="nearest-seller-badge">Nearest Seller</div>
-      <img src={`http://localhost:3000${product.imagePath}`} alt={product.productName} />
+      <img src={product.imagePath || '/default-image-path.jpg'} alt={product.productName} />
       <h2>{product.productName}</h2>
       <p>Shipped in 3-4 days</p>
       <p className="price">${product.price}</p>

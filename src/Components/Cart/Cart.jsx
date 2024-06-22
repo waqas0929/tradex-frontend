@@ -116,7 +116,7 @@ const Cart = () => {
                   />
                 </div>
                 <div className="item-details">
-                  <img src={`http://localhost:3000${item.Product.imagePath}`} alt={item.Product.productName} />
+                  <img src={item.Product.imagePath || '/default-image-path.jpg'} alt={item.Product.productName} />
                   <div className="item-info">
                     <h2>{item.Product.productName}</h2>
                     <p>Color: {item.Product.color}</p>

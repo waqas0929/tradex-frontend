@@ -1,7 +1,8 @@
+// src/Components/OrderList/OrderList.jsx
 import React, { useEffect, useState } from 'react';
 import api from '../../Api/api';
-import { useAuth } from '../../contexts/AuthContext';
 import './OrderList.css';
+import { useAuth } from '../../contexts/AuthContext';
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
@@ -10,14 +11,8 @@ const OrderList = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const token = localStorage.getItem("token");
-        const response = await api.get(`/order/${user.id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        console.log("Fetched Orders:", response.data); // Debugging statement
-        setOrders(response.data);
+        const response = await api.get(`/orders/${user.id}`);
+        setOrders(response.data.orders);
       } catch (error) {
         console.error('Error fetching orders:', error);
       }
@@ -28,24 +23,30 @@ const OrderList = () => {
     }
   }, [user]);
 
+  if (!orders || !orders.length) {
+    return <div>No orders found</div>;
+  }
+
   return (
     <div className="order-list-container">
       <h1>My Orders</h1>
-      {orders.length > 0 ? (
-        orders.map((order) => (
-          <div key={order.id} className="order-item">
-            <img src={`http://localhost:3000${order.product.imagePath}`} alt={order.product.productName} />
-            <div className="order-details">
-              <h2>{order.product.productName}</h2>
-              <p>Quantity: {order.quantity}</p>
-              <p>Total Price: ${order.totalAmount}</p>
-              <p>Order Date: {new Date(order.createdAt).toLocaleDateString()}</p>
-            </div>
+      <div className="order-list">
+        {orders.map(order => (
+          <div key={order.id} className="order-card">
+            {order.product ? (
+              <>
+                <img src={order.product.imagePath || '/default-image-path.jpg'} alt={order.product.productName || 'No name available'} />
+                <h2>{order.product.productName || 'No name available'}</h2>
+                <p>Quantity: {order.quantity}</p>
+                <p>Total: Rs. {order.totalAmount}</p>
+                <p>Status: {order.status}</p>
+              </>
+            ) : (
+              <div>Product details not available</div>
+            )}
           </div>
-        ))
-      ) : (
-        <p>No orders found.</p>
-      )}
+        ))}
+      </div>
     </div>
   );
 };
