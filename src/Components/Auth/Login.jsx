@@ -21,7 +21,7 @@ const Login = () => {
       navigate("/Home");
     } catch (error) {
       console.error("Login failed:", error);
-      setError("Invalid credentials");
+      setError("Password should include at least one special character (e.g., !, @, #, $). credentials");
     }
   };
 

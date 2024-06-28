@@ -1,7 +1,8 @@
+// Cart.jsx
 import React, { useEffect, useState } from 'react';
 import api from '../../Api/api';
 import './Cart.css';
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from '../../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -54,7 +55,7 @@ const Cart = () => {
       toast.success('Purchase successful!', {
         position: 'top-center',
       });
-      setCartItems(cartItems.filter(item => !selectedItems.includes(item.Product.id))); // Optionally remove the item from cart after purchase
+      setCartItems(cartItems.filter(item => !selectedItems.includes(item.Product.id)));
     } catch (error) {
       console.error('Error buying product:', error);
       toast.error('Failed to process the purchase.');
@@ -116,7 +117,7 @@ const Cart = () => {
                   />
                 </div>
                 <div className="item-details">
-                  <img src={item.Product.imagePath || '/default-image-path.jpg'} alt={item.Product.productName} />
+                  <img src={`http://localhost:3000${item.Product.imagePath}`} alt={item.Product.productName} />
                   <div className="item-info">
                     <h2>{item.Product.productName}</h2>
                     <p>Color: {item.Product.color}</p>

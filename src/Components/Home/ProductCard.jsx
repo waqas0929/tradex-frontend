@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import api from '../../Api/api';
-import { useAuth } from '../../contexts/AuthContext'; // Import the useAuth hook
+import { useAuth } from '../../contexts/AuthContext';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
@@ -14,12 +14,10 @@ const ProductCard = ({ product }) => {
   const handleBuyNow = async () => {
     try {
       const response = await api.post('/buyNow', {
-        userId: user.id, 
+        userId: user.id,
         productId: product.id,
         quantity,
       });
-      console.log('User Details:', user);
-      // Pass the entire product object along with the sale data and user details
       navigate('/buyNow', { state: { sale: { ...response.data.sale, product }, user } });
     } catch (error) {
       console.error('Error buying product:', error);
@@ -30,7 +28,7 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = async () => {
     try {
       await api.post('/addToCart', {
-        userId: user.id, // Use the actual user ID from the authentication context
+        userId: user.id,
         productId: product.id,
         quantity,
       });
@@ -46,7 +44,12 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <div className="nearest-seller-badge">Nearest Seller</div>
-      <img src={product.imagePath || '/default-image-path.jpg'} alt={product.productName} />
+      <img 
+        src={`http://localhost:3001${product.imagePath}`} 
+        alt={product.productName} 
+        onLoad={(e) => e.target.classList.remove('hidden')}
+        onError={(e) => console.error(`Error loading image: ${e.target.src}`)}
+      />
       <h2>{product.productName}</h2>
       <p>Shipped in 3-4 days</p>
       <p className="price">${product.price}</p>

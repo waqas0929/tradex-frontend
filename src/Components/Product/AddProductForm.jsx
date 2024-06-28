@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../Api/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AddCategoryForm from '../Category/AddCategoryForm';
 import './AddProductForm.css';
 
 const AddProductForm = () => {
@@ -33,7 +34,7 @@ const AddProductForm = () => {
 
   const handleCategoryAdded = (newCategory) => {
     setCategories([...categories, newCategory]);
-    setShowAddCategory(false);
+    setSelectedCategory(newCategory.id);
   };
 
   const handleInputChange = (e) => {
@@ -136,6 +137,11 @@ const AddProductForm = () => {
         </div>
         <button className="add-product-button" type="submit">Add Product</button>
       </form>
+      <AddCategoryForm
+        isOpen={showAddCategory}
+        onRequestClose={() => setShowAddCategory(false)}
+        onCategoryAdded={handleCategoryAdded}
+      />
       <ToastContainer />
     </div>
   );
